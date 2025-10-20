@@ -161,7 +161,7 @@ if orig_file:
     # Visualization
     try:
         heatmap_img = generate_heatmap(model, orig_img, transform, device)
-        st.image(heatmap_img, caption="Activation Heatmap", use_container_width=True)
+        st.image(heatmap_img, caption="Activation Heatmap", width=None)
     except Exception as e:
         st.warning(f"⚠️ Heatmap generation failed: {e}")
 
@@ -179,7 +179,7 @@ if orig_file:
             second_file = st.file_uploader("Upload Second Image", type=["jpg", "png"], key="second")
             if second_file:
                 second_img = Image.open(second_file).convert("RGB")
-                st.image(second_img, caption="Second Image", use_container_width=True)
+                st.image(second_img, caption="Second Image", width=None)
 
                 probs2 = predict_deepfake_resnet(second_img, model, transform, device)
                 st.write(f"**Real probability:** {probs2['real_prob']:.3f}")
@@ -211,7 +211,7 @@ if orig_file:
                 if ret:
                     frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                     webcam_img = Image.fromarray(frame_rgb)
-                    st.image(webcam_img, caption="Captured Image", use_container_width=True)
+                    st.image(webcam_img, caption="Captured Image", width=None)
 
                     probs2 = predict_deepfake_resnet(webcam_img, model, transform, device)
                     st.write(f"**Real probability:** {probs2['real_prob']:.3f}")
