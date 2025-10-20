@@ -1,0 +1,28 @@
+# Extra index for PyTorch CPU wheels
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Core Python Libraries
+numpy==1.26.4
+pandas==2.2.2
+matplotlib==3.9.2
+Pillow==10.4.0
+opencv-python-headless==4.10.0.84
+
+# PyTorch and Vision
+torch==2.3.1+cpu
+torchvision==0.18.1+cpu
+timm==1.0.9
+
+# Deep Learning Utilities
+scikit-learn==1.5.2
+
+# Face Recognition / Embeddings
+insightface==0.7.3
+onnxruntime==1.18.1
+
+# Visualization and Web App
+streamlit==1.37.1
+
+# Misc Utilities
+tqdm==4.66.5
+requests==2.32.3
