@@ -152,7 +152,7 @@ st.header("Step 1: Deepfake Detection (Original Image)")
 orig_file = st.file_uploader("Upload Original Image", type=["jpg", "png"])
 if orig_file:
     orig_img = Image.open(orig_file).convert("RGB")
-    st.image(orig_img, caption="Original Image", use_container_width=True)
+    st.image(orig_img, caption="Original Image", width=None)
 
     probs = predict_deepfake_resnet(orig_img, model, transform, device)
     st.write(f"**Real probability:** {probs['real_prob']:.3f}")
