@@ -143,7 +143,7 @@ def face_similarity(img1, img2, app):
 # ============================================================
 st.title("🧠 Deepfake Detection + Face Verification (ResNet-50)")
 
-MODEL_PATH = "/Users/vikram/Downloads/best_model.pth"  # ✅ update your path
+MODEL_PATH = "best_model.pth"  # ✅ update your path
 model, transform, device = load_resnet50_model(MODEL_PATH)
 app = init_insightface()
 
