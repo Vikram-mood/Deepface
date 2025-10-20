@@ -132,14 +132,14 @@ elif orig_source == "Use Webcam":
         orig_img = Image.open(camera_file).convert("RGB")
 
 if orig_img:
-    st.image(orig_img, caption="Original Image", use_container_width=True)
+    st.image(orig_img, caption="Original Image", width=None)
     probs = predict_deepfake_resnet(orig_img, model, transform, device)
     st.write(f"**Real Probability:** {probs['real_prob']:.3f}")
     st.write(f"**Fake Probability:** {probs['fake_prob']:.3f}")
 
     try:
         heatmap = generate_heatmap(model, orig_img, transform, device)
-        st.image(heatmap, caption="Activation Heatmap", use_container_width=True)
+        st.image(heatmap, caption="Activation Heatmap", width=None)
     except Exception as e:
         st.warning(f"⚠️ Heatmap generation failed: {e}")
 
@@ -164,7 +164,7 @@ if orig_img:
                 second_img = Image.open(cam2).convert("RGB")
 
         if second_img:
-            st.image(second_img, caption="Second Image", use_container_width=True)
+            st.image(second_img, caption="Second Image", width=None)
             probs2 = predict_deepfake_resnet(second_img, model, transform, device)
             st.write(f"**Real Probability:** {probs2['real_prob']:.3f}")
             st.write(f"**Fake Probability:** {probs2['fake_prob']:.3f}")
